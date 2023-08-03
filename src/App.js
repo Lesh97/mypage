@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Profile from "./components/Profile";
-import Portfolio from "./components/Portfolio";
-import Contact from "./components/Contact";
+import Profile from "./routes/Profile";
+import Portfolio from "./routes/Portfolio";
+import Contact from "./routes/Contact";
 import "./App.css";
 
 function App() {
