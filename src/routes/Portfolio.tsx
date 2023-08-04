@@ -1,7 +1,14 @@
 import React from "react";
+import { PortfolioWrapper, PortfolioGrid } from "../styled/PortfolioStyled";
 
 function Portfolio() {
-  return <div>포트폴리오 페이지입니다.</div>;
+  return (
+    <>
+      <PortfolioWrapper>
+        <PortfolioGrid>그리드입니다</PortfolioGrid>
+      </PortfolioWrapper>
+    </>
+  );
 }
 
 export default Portfolio;

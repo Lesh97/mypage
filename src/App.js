@@ -1,20 +1,25 @@
-import { BrowserRouter as Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Profile from "./routes/Profile";
 import Portfolio from "./routes/Portfolio";
-import Contact from "./routes/Contact";
+import Home from "./routes/Home";
+import MatchAllRoute from "./routes/MatchAllRoute";
 import "./App.css";
+import React from "react";
 
 function App() {
   return (
     <>
       <Header></Header>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/portfolio" element={<Portfolio />} />
 
-      <Routes>
-        <Route path="/profile" element={<Profile></Profile>}></Route>
-        <Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
-        <Route path="/contact" element={<Contact></Contact>}></Route>
-      </Routes>
+          <Route path="*" element={<MatchAllRoute />} />
+        </Routes>
+      </div>
     </>
   );
 }
