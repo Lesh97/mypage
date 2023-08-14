@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   HeaderWrapper,
   HeaderCategory,
@@ -10,9 +11,8 @@ function Header() {
     <>
       <HeaderWrapper>
         <HeaderCategory>
-          <CategoryFont href="/">홈으로</CategoryFont>
+          <CategoryFont href="/">소개</CategoryFont>
           <CategoryFont href="/portfolio">포트폴리오</CategoryFont>
-          <CategoryFont href="/profile">프로필</CategoryFont>
         </HeaderCategory>
       </HeaderWrapper>
     </>

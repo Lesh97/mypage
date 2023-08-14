@@ -1,20 +1,47 @@
 import React from "react";
+import PortfolioSlider from "../components/PortfolioSlider";
 import {
   MainWrapper,
   SelfIntroduce,
-  PortfolioSlider,
+  PortfolioSection,
   ContactMe,
+  AddressWrapper,
 } from "../styled/HomeStyled";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
   return (
     <>
       <MainWrapper>
-        <SelfIntroduce>나를 간단하게 소개하는 섹터</SelfIntroduce>
-        <PortfolioSlider>
-          내 포폴 슬라이더 또는 넘기면서 간단하게 보는 곳/ 포폴페이지로 갈수있게
-        </PortfolioSlider>
-        <ContactMe>나랑 연락할 수 있는 곳 이메일, 인스타</ContactMe>
+        <SelfIntroduce>
+          <div className="IntroWrapper">
+            <div className="fixedIntro">
+              안녕하세요. <div className="flexIntro">무슨무슨</div> 프론트엔드
+              개발자 이수현입니다.
+            </div>
+            <div className="horizontal"></div>
+          </div>
+          <div className="mySkills">
+            <h2>사용하는 기술</h2>
+            <img src="/logos/cssLogo.png"></img>
+            <img src="/logos/htmlLogo.png"></img>
+            <img src="/logos/jsLogo.png"></img>
+            <img src="/logos/nodeLogo.png"></img>
+            <img src="/logos/reactLogo.png"></img>
+            <img src="/logos/tsLogo.png"></img>
+          </div>
+        </SelfIntroduce>
+        <PortfolioSection>
+          <PortfolioSlider></PortfolioSlider>
+        </PortfolioSection>
+        <ContactMe>
+          <AddressWrapper>
+            <FontAwesomeIcon icon={faEnvelope} className="email" />
+            <h2>E-Mail : </h2>
+            <h3> dltngus4652@gmail.com</h3>
+          </AddressWrapper>
+        </ContactMe>
       </MainWrapper>
     </>
   );
