@@ -24,14 +24,24 @@ export const SliderStyled = styled(Slider)`
   .slideItems {
     width: 500px;
     height: 600px;
-    margin: 50px 0px;
+    margin-top: 50px;
     background-color: ${(props) => props.theme.beige.slideBackground};
   }
 
   .slick-list {
     width: 100%;
     height: 700px;
-    padding: 0px;
+  }
+  .imgdiv {
+    width: 500px;
+    height: 600px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+
+    margin-left: 10px;
+    border-radius: 10px;
   }
 `;
 
@@ -43,19 +53,36 @@ export const BtnWrapper = styled.div`
 `;
 
 export const PrevBtn = styled.button`
-  width: 100px;
+  z-index: 1;
+  position: absolute;
+  top: 330px;
+  width: 60px;
   height: 50px;
-  border-radius: 10px;
+  border-radius: 35px;
   border: 2px solid orange;
   background-color: ${(props) => props.theme.beige.slideBackground};
   color: ${(props) => props.theme.orange.infoText};
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 1;
+  }
 `;
 export const NextBtn = styled.button`
-  width: 100px;
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  top: 330px;
+  width: 60px;
   height: 50px;
-  border-radius: 10px;
+  border-radius: 35px;
   border: 2px solid orange;
   background-color: ${(props) => props.theme.beige.slideBackground};
   color: ${(props) => props.theme.orange.infoText};
   margin-left: 20px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 1;
+  }
 `;

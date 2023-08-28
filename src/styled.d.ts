@@ -13,6 +13,7 @@ export const theme: DefaultTheme = {
   beige: {
     background: "#fffae2",
     slideBackground: "#ffdab9",
+    skillBackground: "#fffeef",
   },
   orange: {
     navText: "#ffa500",

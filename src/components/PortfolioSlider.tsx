@@ -1,77 +1,105 @@
 import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { Component } from "react";
+import React, { Component, useRef, useState } from "react";
 import {
   SliderStyled,
   SliderTitle,
-  PrevBtn,
-  NextBtn,
   SliderWrapper,
   BtnWrapper,
   SeeMore,
+  PrevBtn,
+  NextBtn,
 } from "../styled/SliderStyled";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import popupProps from "../PopupProps";
+import Popup from "../components/Popup";
 
-export default class PortfolioSlider extends Component {
-  slider: any;
-  constructor(props: {} | Readonly<{}>) {
-    super(props);
-    this.next = this.next.bind(this);
-    this.previous = this.previous.bind(this);
-  }
-
-  next = () => {
-    this.slider.slickNext();
-  };
-  previous = () => {
-    this.slider.slickPrev();
-  };
-  render() {
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      centerPadding: "60px",
-      slidesToScroll: 1,
-      centerMode: true,
-      lazyload: true,
-    };
-
-    return (
-      <>
-        <SliderWrapper>
-          <SliderTitle>
-            포트폴리오{" "}
-            <SeeMore href="/portfolio">
-              전체보기 <FontAwesomeIcon icon={faAnglesRight} />
-            </SeeMore>
-          </SliderTitle>
-          <SliderStyled ref={(c: any) => (this.slider = c)} {...settings}>
-            <div className="slideItems">
-              <h3>1</h3>
-            </div>
-            <div className="slideItems">
-              <h3>2</h3>
-            </div>
-            <div className="slideItems">
-              <h3>3</h3>
-            </div>
-            <div className="slideItems">
-              <h3>4</h3>
-            </div>
-            <div className="slideItems">
-              <h3>5</h3>
-            </div>
-            <div className="slideItems">
-              <h3>6</h3>
-            </div>
-          </SliderStyled>
-          <BtnWrapper>
-            <PrevBtn onClick={this.previous}>이전</PrevBtn>
-            <NextBtn onClick={this.next}>다음</NextBtn>
-          </BtnWrapper>
-        </SliderWrapper>
-      </>
-    );
-  }
+interface IArrowProps {
+  onClick: any;
 }
+
+const ReactSlick = () => {
+  const [isPopupOpen, setPopupOpen] = useState(false);
+  const [popProps, setPopProps] = useState(popupProps);
+
+  const showPopup = () => {
+    setPopupOpen(true);
+  };
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    centerPadding: "60px",
+    slidesToScroll: 1,
+    centerMode: true,
+    lazyload: true,
+    nextArrow: <NextArrow onClick={undefined} />,
+    prevArrow: <PrevArrow onClick={undefined} />,
+  };
+
+  return (
+    <>
+      <SliderWrapper>
+        <SliderTitle>
+          포트폴리오{" "}
+          <SeeMore href="/portfolio">
+            전체보기 <FontAwesomeIcon icon={faAnglesRight} />
+          </SeeMore>
+        </SliderTitle>
+        <SliderStyled {...settings}>
+          {popProps &&
+            popProps.map((a: any, i: number) => {
+              return <Popup popProps={popProps[i]} key={i} />;
+            })}
+
+          <div className="slideItems">
+            <div className="imgdiv" onClick={showPopup}>
+              {isPopupOpen && <Popup popProps={popProps[0]} />}
+
+              <img src="/cardImg/youtubeImg.png"></img>
+            </div>
+          </div>
+          <div className="slideItems">
+            <div className="imgdiv" onClick={showPopup}>
+              {isPopupOpen && <Popup popProps={popProps[1]} />}
+
+              <img src="/cardImg/ottImg.png"></img>
+            </div>
+          </div>
+          <div className="slideItems">
+            <div className="imgdiv" onClick={showPopup}>
+              {isPopupOpen && <Popup popProps={popProps[2]} />}
+              <img src="/cardImg/shoppingImg.png"></img>
+            </div>
+          </div>
+          <div className="slideItems">
+            <div className="imgdiv" onClick={showPopup}>
+              {isPopupOpen && <Popup popProps={popProps[3]} />}
+              <img src="/cardImg/todoImg.png"></img>
+            </div>
+          </div>
+        </SliderStyled>
+        <BtnWrapper></BtnWrapper>
+      </SliderWrapper>
+    </>
+  );
+};
+const PrevArrow = ({ onClick }: IArrowProps) => {
+  return (
+    <PrevBtn onClick={onClick} type="button">
+      이전
+    </PrevBtn>
+  );
+};
+const NextArrow = ({ onClick }: IArrowProps) => {
+  return (
+    <NextBtn onClick={onClick} type="button">
+      다음
+    </NextBtn>
+  );
+};
+
+export default ReactSlick;
