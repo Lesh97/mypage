@@ -20,6 +20,11 @@ interface IArrowProps {
 }
 
 const ReactSlick = () => {
+  /** 
+   *  지금 div에 onClick 함수 href로 포폴페이지로 넘길생각
+   *  현재는 팝업인데 다 삭제할 예정
+  */
+  
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [popProps, setPopProps] = useState(popupProps);
 
