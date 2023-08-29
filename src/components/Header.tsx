@@ -31,6 +31,7 @@ function Header() {
     <>
       <HeaderWrapper>
         <HeaderCategory>
+          <CategoryFont href="/">Home</CategoryFont>
           <CategoryFont href="#intro" onClick={introClick}>
             Intro
           </CategoryFont>

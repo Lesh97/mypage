@@ -1,6 +1,6 @@
 import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { Component, useRef, useState } from "react";
+import React from "react";
 import {
   SliderStyled,
   SliderTitle,
@@ -12,26 +12,12 @@ import {
 } from "../styled/SliderStyled";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import popupProps from "../PopupProps";
-import Popup from "../components/Popup";
 
 interface IArrowProps {
   onClick: any;
 }
 
 const ReactSlick = () => {
-  /** 
-   *  지금 div에 onClick 함수 href로 포폴페이지로 넘길생각
-   *  현재는 팝업인데 다 삭제할 예정
-  */
-  
-  const [isPopupOpen, setPopupOpen] = useState(false);
-  const [popProps, setPopProps] = useState(popupProps);
-
-  const showPopup = () => {
-    setPopupOpen(true);
-  };
-
   const settings = {
     dots: true,
     infinite: true,
@@ -55,34 +41,23 @@ const ReactSlick = () => {
           </SeeMore>
         </SliderTitle>
         <SliderStyled {...settings}>
-          {popProps &&
-            popProps.map((a: any, i: number) => {
-              return <Popup popProps={popProps[i]} key={i} />;
-            })}
-
           <div className="slideItems">
-            <div className="imgdiv" onClick={showPopup}>
-              {isPopupOpen && <Popup popProps={popProps[0]} />}
-
+            <div className="imgdiv">
               <img src="/cardImg/youtubeImg.png"></img>
             </div>
           </div>
           <div className="slideItems">
-            <div className="imgdiv" onClick={showPopup}>
-              {isPopupOpen && <Popup popProps={popProps[1]} />}
-
+            <div className="imgdiv">
               <img src="/cardImg/ottImg.png"></img>
             </div>
           </div>
           <div className="slideItems">
-            <div className="imgdiv" onClick={showPopup}>
-              {isPopupOpen && <Popup popProps={popProps[2]} />}
+            <div className="imgdiv">
               <img src="/cardImg/shoppingImg.png"></img>
             </div>
           </div>
           <div className="slideItems">
-            <div className="imgdiv" onClick={showPopup}>
-              {isPopupOpen && <Popup popProps={popProps[3]} />}
+            <div className="imgdiv">
               <img src="/cardImg/todoImg.png"></img>
             </div>
           </div>

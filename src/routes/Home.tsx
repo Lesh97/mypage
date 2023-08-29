@@ -4,11 +4,10 @@ import {
   MainWrapper,
   SelfIntroduce,
   PortfolioSection,
-  ContactMe,
-  AddressWrapper,
 } from "../styled/HomeStyled";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function Home() {
   const flexedWords = "소통하는";
@@ -35,6 +34,7 @@ function Home() {
   }, [wordCount]);
   return (
     <>
+      <Header></Header>
       <MainWrapper id="intro">
         <SelfIntroduce>
           <div className="IntroWrapper">
@@ -97,13 +97,7 @@ function Home() {
         <PortfolioSection id="portfolio">
           <PortfolioSlider></PortfolioSlider>
         </PortfolioSection>
-        <ContactMe id="contact">
-          <AddressWrapper>
-            <FontAwesomeIcon icon={faEnvelope} className="email" />
-            <h2>E-Mail : </h2>
-            <h3> dltngus4652@gmail.com</h3>
-          </AddressWrapper>
-        </ContactMe>
+        <Footer></Footer>
       </MainWrapper>
     </>
   );
