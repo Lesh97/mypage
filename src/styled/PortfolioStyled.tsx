@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const PortfolioWrapper = styled.div`
   width: 100%;
@@ -46,7 +47,6 @@ export const CardWrapper = styled.div`
       width: 100%;
       height: 70%;
       border-radius: 15px 15px 0px 0px;
-      border-bottom: 2px solid black;
     }
   }
   .pWrapper {
@@ -54,10 +54,27 @@ export const CardWrapper = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
     width: 100%;
     img {
       width: 100px;
       height: 100px;
     }
   }
+
+  .cardSkills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    img {
+      width: 50px;
+      height: 50px;
+      margin-left: 5px;
+    }
+  }
+`;
+
+export const CardLink = styled(Link)`
+  text-decoration: none;
 `;

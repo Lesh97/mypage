@@ -1,6 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { CardWrapper } from "../styled/PortfolioStyled";
+import React, { useState } from "react";
+import { CardLink, CardWrapper } from "../styled/PortfolioStyled";
 
 function PortfolioCard(props: {
   cards: {
@@ -8,12 +7,14 @@ function PortfolioCard(props: {
     img: string;
     title: string;
     skills: string;
+    logos: string[];
   };
 }) {
+  let [outImg, setOutImg] = useState(props.cards.logos);
   return (
     <>
       <CardWrapper>
-        <Link
+        <CardLink
           to={`${props.cards.id}`}
           className="hoverover"
           id={`${props.cards.id}`}
@@ -24,9 +25,13 @@ function PortfolioCard(props: {
           </div>
           <div className="pWrapper">
             <h3>사용한 기술</h3>
-            <p>{props.cards.skills}</p>
+            <div className="cardSkills">
+              {outImg.map((a: any, i: number) => {
+                return <img src={`${outImg[i]}`}></img>;
+              })}
+            </div>
           </div>
-        </Link>
+        </CardLink>
       </CardWrapper>
     </>
   );
