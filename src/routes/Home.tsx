@@ -1,13 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PortfolioSlider from "../components/PortfolioSlider";
 import {
   MainWrapper,
   SelfIntroduce,
   PortfolioSection,
 } from "../styled/HomeStyled";
-
-import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 function Home() {
   const flexedWords = "소통하는";

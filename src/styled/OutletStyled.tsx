@@ -24,7 +24,7 @@ export const OutletSkills = styled.div`
   justify-content: center;
   flex-direction: column;
   margin-top: 40px;
-  font-size: 25px;
+  font-size: 30px;
 `;
 export const OutletSum = styled.div`
   display: flex;

@@ -23,6 +23,10 @@ export const PortfolioGrid = styled.div`
 `;
 
 export const CardWrapper = styled.div`
+  border: 1px solid black;
+  border-radius: 0px 0px 20% 20%;
+  border-bottom: none;
+
   .hoverover {
     width: 100%;
     height: 100%;
@@ -46,7 +50,7 @@ export const CardWrapper = styled.div`
     img {
       width: 100%;
       height: 70%;
-      border-radius: 15px 15px 0px 0px;
+      border-radius: 0px 0px 15px 15px;
     }
   }
   .pWrapper {
@@ -54,7 +58,6 @@ export const CardWrapper = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
     width: 100%;
     img {
       width: 100px;

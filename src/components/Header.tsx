@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
-
+import { motion, AnimatePresence } from "framer-motion";
 import {
-  HeaderWrapper,
   HeaderCategory,
   CategoryFont,
+  HeaderWrapper,
 } from "../styled/HeaderStyled";
 
 function Header() {
@@ -14,6 +14,7 @@ function Header() {
 
   const introClick = () => {
     introRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    console.log(introClick);
   };
 
   const skillClick = () => {
@@ -27,25 +28,31 @@ function Header() {
   const contactClick = () => {
     contactRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
   return (
     <>
-      <HeaderWrapper>
-        <HeaderCategory>
-          <CategoryFont href="/">Home</CategoryFont>
-          <CategoryFont href="#intro" onClick={introClick}>
-            Intro
-          </CategoryFont>
-          <CategoryFont href="#skills" onClick={skillClick}>
-            Skills
-          </CategoryFont>
-          <CategoryFont href="#portfolio" onClick={portClick}>
-            Portfolio
-          </CategoryFont>
-          <CategoryFont href="#contact" onClick={contactClick}>
-            Contact
-          </CategoryFont>
-        </HeaderCategory>
-      </HeaderWrapper>
+      <AnimatePresence>
+        <HeaderWrapper initial="hidden" animate="visible" variants={variants}>
+          <HeaderCategory>
+            <CategoryFont href="/">Home</CategoryFont>
+            <CategoryFont href="#intro" onClick={introClick}>
+              Intro
+            </CategoryFont>
+            <CategoryFont href="#skills" onClick={skillClick}>
+              Skills
+            </CategoryFont>
+            <CategoryFont href="#portfolio" onClick={portClick}>
+              Portfolio
+            </CategoryFont>
+            <CategoryFont href="#contact" onClick={contactClick}>
+              Contact
+            </CategoryFont>
+          </HeaderCategory>
+        </HeaderWrapper>
+      </AnimatePresence>
     </>
   );
 }
