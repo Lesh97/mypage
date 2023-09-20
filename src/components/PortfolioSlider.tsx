@@ -37,7 +37,7 @@ const ReactSlick = () => {
         <SliderTitle>
           포트폴리오{" "}
           <SeeMore href="/portfolio">
-            전체보기 <FontAwesomeIcon icon={faAnglesRight} />
+            자세히보기 <FontAwesomeIcon icon={faAnglesRight} />
           </SeeMore>
         </SliderTitle>
         <SliderStyled {...settings}>

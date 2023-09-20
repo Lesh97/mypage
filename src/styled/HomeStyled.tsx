@@ -4,15 +4,16 @@ export const MainWrapper = styled.div`
   margin-top: 150px;
   width: 100%;
   height: 100%;
+  background-color: ${(props) => props.theme.beige.background};
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 `;
 export const SelfIntroduce = styled.div`
+  margin-top: 150px;
   width: 100%;
   height: 100%;
-  background-color: ${(props) => props.theme.beige.background};
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -55,7 +56,7 @@ export const SelfIntroduce = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 30px;
+    padding-top: 150px;
 
     .skillbar {
       display: flex;

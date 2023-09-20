@@ -12,10 +12,10 @@ export const OutletWrapper = styled.div`
 export const OutletTitle = styled.div`
   font-size: 40px;
   font-weight: 800;
-  margin-top: 20px;
+  margin-top: 30px;
 `;
 export const OutletLink = styled(Link)`
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 20px;
 `;
 export const OutletSkills = styled.div`
@@ -23,7 +23,7 @@ export const OutletSkills = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 40px;
+  margin-top: 60px;
   font-size: 30px;
 `;
 export const OutletSum = styled.div`
@@ -31,7 +31,7 @@ export const OutletSum = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 40px;
+  margin-top: 60px;
   font-size: 30px;
   padding: 0px 30px;
 `;
@@ -40,7 +40,9 @@ export const OutletThink = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 40px;
+  margin-top: 60px;
   font-size: 30px;
   padding: 0px 30px;
+  word-wrap: break-word;
+  word-break: keep-all;
 `;

@@ -13,20 +13,19 @@ function Header() {
   const contactRef = useRef<HTMLDivElement>(null);
 
   const introClick = () => {
-    introRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    console.log(introClick);
+    introRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const skillClick = () => {
-    skillRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    skillRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const portClick = () => {
-    portRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    portRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const contactClick = () => {
-    contactRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    contactRef.current?.scrollIntoView({ behavior: "smooth" });
   };
   const variants = {
     hidden: { opacity: 0 },
@@ -37,7 +36,6 @@ function Header() {
       <AnimatePresence>
         <HeaderWrapper initial="hidden" animate="visible" variants={variants}>
           <HeaderCategory>
-            <CategoryFont href="/">Home</CategoryFont>
             <CategoryFont href="#intro" onClick={introClick}>
               Intro
             </CategoryFont>
