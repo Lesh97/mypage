@@ -52,7 +52,7 @@ function PortfolioPage() {
         </OutletThink>
         <OutletImg>
           {img.map((a: any, i: number) => {
-            return img == null ? null : <img src={`${img[i]}`} />;
+            return <img src={`${img[i]}`} />;
           })}
         </OutletImg>
       </OutletWrapper>
