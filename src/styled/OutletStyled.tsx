@@ -7,7 +7,7 @@ export const OutletWrapper = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 `;
 export const OutletTitle = styled.div`
   font-size: 40px;
@@ -45,4 +45,16 @@ export const OutletThink = styled.div`
   padding: 0px 30px;
   word-wrap: break-word;
   word-break: keep-all;
+`;
+
+export const OutletImg = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 500px;
+    height: 500px;
+    margin: 60px;
+  }
 `;

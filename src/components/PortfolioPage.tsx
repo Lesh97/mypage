@@ -7,6 +7,7 @@ import {
   OutletSum,
   OutletThink,
   OutletTitle,
+  OutletImg,
   OutletWrapper,
 } from "../styled/OutletStyled";
 
@@ -27,7 +28,8 @@ function PortfolioPage() {
     Id: any;
     params: string;
   };
-  console.log(params);
+  const [img, setImg] = useState(outletData[params.Id].img);
+
   return (
     <>
       <OutletWrapper>
@@ -48,6 +50,11 @@ function PortfolioPage() {
           <div>🤔Thinking</div>
           {outletData[params.Id].thinking}
         </OutletThink>
+        <OutletImg>
+          {img.map((a: any, i: number) => {
+            return img == null ? null : <img src={`${img[i]}`} />;
+          })}
+        </OutletImg>
       </OutletWrapper>
     </>
   );
